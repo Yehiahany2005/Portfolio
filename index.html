@@ -1,0 +1,526 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="color-scheme" content="dark" />
+		<meta name="theme-color" content="#070812" />
+
+		<title>Yehia Hany Shorim </title>
+		
+
+		<link rel="stylesheet" href="portfolio.css" />
+
+		<!--
+			GSAP setup:
+			- No packages installed locally in this project.
+			- We include GSAP + ScrollTrigger via CDN (production minified builds).
+			- If you prefer local vendored files, tell me and I’ll add them.
+		-->
+		<script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+		<script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+		<script defer src="portfolio.js"></script>
+	</head>
+
+	<body>
+		<a class="skip" href="#content">Skip to content</a>
+
+		<div class="bg" aria-hidden="true">
+			<div class="bg__blob bg__blob--a"></div>
+			<div class="bg__blob bg__blob--b"></div>
+			<div class="bg__blob bg__blob--c"></div>
+			<div class="bg__grid"></div>
+			<div class="bg__noise"></div>
+		</div>
+
+		<header class="navbar" id="navbar">
+			<div class="container navbar__inner">
+				<nav class="navlinks navlinks--left" aria-label="Primary (left)">
+					<a class="navlinks__link" href="#education">Education</a>
+					<a class="navlinks__link" href="#skills">Skills</a>
+				</nav>
+
+				<a class="brand brand--nav" id="navLockup" href="#top" aria-label="Go to top">
+					<img class="brand__avatar" src="photos/MyPhoto.JPG" alt="Yehia Hany Shorim" loading="eager" />
+					<span class="brand__logo">Yehia Hany Shorim</span>
+					<span class="brand__sub">Computer Science Student · AI Enthusiast</span>
+				</a>
+
+				<nav class="navlinks navlinks--right" aria-label="Primary (right)">
+					<a class="navlinks__link" href="#projects">Projects</a>
+					<a class="navlinks__link" href="#certs">Certificates</a>
+				</nav>
+			</div>
+		</header>
+
+		<!--
+			This is the animated “floating” logo that starts huge in the center and
+			shrinks/moves into the navbar position via GSAP ScrollTrigger.
+			It’s aria-hidden to avoid duplicate announcements (the real H1 lives in the hero).
+		-->
+		<div class="brand brand--float" id="floatLockup" aria-hidden="true">
+			<img class="brand__avatar" src="photos/MyPhoto.JPG" alt="" loading="eager" decoding="async" />
+			<span class="brand__logo">Yehia Hany Shorim</span>
+			<span class="brand__sub">Computer Science Student · AI Enthusiast</span>
+		</div>
+
+		<main id="content">
+			<div class="container" id="top">
+				<section class="hero hero--pin" id="hero" aria-label="Intro">
+					<h1 class="sr-only">Yehia Hany Shorim</h1>
+				</section>
+
+				<section class="classic" aria-label="Intro (classic)">
+					<div class="hero">
+						<section class="card hero-left" aria-label="Intro">
+							<h1 class="hero-name">Yehia Hany Shorim</h1>
+							<p class="headline">
+								I’m <strong>Yehia Hany Shorim</strong>, a junior Computer Science student minoring in
+								<strong>Artificial Intelligence</strong> at Misr International University and a competitive squash athlete.
+								Passionate about Artificial Intelligence, software engineering, and building efficient, real-world systems that
+								address real problems.
+							</p>
+
+							<div class="badges" aria-label="Highlights">
+								<span class="badge"><span class="dot" aria-hidden="true"></span> Cairo, Egypt</span>
+								<span class="badge"><span class="dot" aria-hidden="true"></span> Junior Computer Science student</span>
+								<span class="badge"><span class="dot" aria-hidden="true"></span> Full stack Web developer</span>
+								<span class="badge"><span class="dot" aria-hidden="true"></span> AI Enthusiast</span>
+							</div>
+
+							<div class="cta-row" aria-label="Quick links">
+								<a class="btn primary" href="mailto:yehia.shorim@gmail.com">Email</a>
+								<a class="btn" href="tel:+201062920111">Call</a>
+								<a class="btn" href="https://github.com/Yehiahany2005" target="_blank" rel="noreferrer">GitHub</a>
+								<a class="btn" href="https://linkedin.com/in/yehiashorim" target="_blank" rel="noreferrer">LinkedIn</a>
+							</div>
+						</section>
+
+						<aside class="hero-right" aria-label="Details">
+							<div class="card photo-card">
+								<div class="photo-wrap">
+									<img src="photos/MyPhoto.JPG" alt="Yehia Hany Shorim" loading="eager" />
+									<div class="photo-overlay">
+										<strong>Yehia Hany Shorim</strong>
+										<span>Computer Science Student · AI minor</span>
+									</div>
+								</div>
+							</div>
+						</aside>
+					</div>
+				</section>
+
+				<section id="projects" class="section">
+					<header class="section__head">
+						<div class="section__title-group">
+							<h2>Projects</h2>
+							<span class="section__line" aria-hidden="true"></span>
+						</div>
+					</header>
+
+					<div class="grid grid--projects">
+						<article class="card card--project">
+							<div class="card__cover">
+								<img src="photos/Projects/PadelUP.png" alt="PadelUp project cover" loading="lazy" />
+								<div class="tag">Full-Stack · Web</div>
+							</div>
+							<div class="card__body">
+								<h3>PadelUp</h3>
+								<p>
+									Full-stack web application delivering an all-in-one solution for padel players: court reservations,
+									marketplace (e-commerce), player matchmaking, tournaments, and admin management.
+								</p>
+								<div class="chips" aria-label="Tech stack">
+									<span class="chip">PHP</span>
+									<span class="chip">HTML</span>
+									<span class="chip">CSS</span>
+									<span class="chip">JavaScript</span>
+								</div>
+								<div class="links" aria-label="Links">
+									<a class="link" href="https://github.com/Yehiahany2005/PadelUp" target="_blank" rel="noreferrer">GitHub</a>
+								</div>
+							</div>
+						</article>
+
+						<article class="card card--project">
+							<div class="card__cover">
+								<img src="photos/Projects/PVZ.png" alt="Plants vs Zombies project cover" loading="lazy" />
+								<div class="tag">Video Game</div>
+							</div>
+							<div class="card__body">
+								<h3>Plants vs Zombies (OOP Project of the Year)</h3>
+								<p>
+									Fully functional Java/JavaFX game demonstrating strong OOP fundamentals (encapsulation, inheritance,
+									abstraction), plus threading, collision handling, and custom-designed levels.
+								</p>
+								<div class="chips" aria-label="Tech stack">
+									<span class="chip">Java</span>
+									<span class="chip">JavaFX</span>
+									<span class="chip">OOP</span>
+									<span class="chip">Threading</span>
+								</div>
+								<div class="links" aria-label="Links">
+									<a class="link" href="https://github.com/Yehiahany2005/PlantsVsZombies-MIU" target="_blank" rel="noreferrer">GitHub</a>
+								</div>
+							</div>
+						</article>
+
+						<article class="card card--project">
+							<div class="card__cover">
+								<img src="photos/Projects/Unibite.png" alt="UniBite project cover" loading="lazy" />
+								<div class="tag">Full-Stack · Web</div>
+							</div>
+							<div class="card__body">
+								<h3>UniBite</h3>
+								<p>Web application helping university students order food online and avoid long waiting lines.</p>
+								<div class="chips" aria-label="Tech stack">
+									<span class="chip">HTML</span>
+									<span class="chip">CSS</span>
+									<span class="chip">JavaScript</span>
+									<span class="chip">Node.js</span>
+									<span class="chip">EJS</span>
+								</div>
+								<div class="links" aria-label="Links">
+									<a class="link" href="https://github.com/Yehiahany2005/UniBite" target="_blank" rel="noreferrer">GitHub</a>
+									<a class="link" href="https://unibite-production.up.railway.app" target="_blank" rel="noreferrer">Live demo</a>
+								</div>
+							</div>
+						</article>
+
+						<article class="card card--project">
+							<div class="card__cover">
+								<img src="photos/Projects/Laptop%20prices.jpg" alt="Hotel booking cancellation classification project cover" loading="lazy" />
+								<div class="tag">Machine Learning</div>
+							</div>
+							<div class="card__body">
+								<h3>Laptop Prices Prediction Model</h3>
+								<p>
+									Machine Learning regression model capable of accurately predicting laptop prices based on their specifications
+								</p>
+								<div class="chips" aria-label="Tech stack">
+									<span class="chip">Python</span>
+									<span class="chip">Regression</span>
+									<span class="chip">scikit-learn</span>
+									<span class="chip">Full ML Pipeline</span>
+									<span class="chip">K-Fold Cross Validation</span>
+								</div>
+								<div class="links" aria-label="Links">
+									<a class="link" href="https://github.com/Yehiahany2005/Hotel-Booking-Cancellation-Classification" target="_blank" rel="noreferrer">GitHub</a>
+								</div>
+							</div>
+						</article>
+
+						<article class="card card--project">
+							<div class="card__cover">
+								<img src="photos/Projects/Diabetes.jpg" alt="Diabetes prediction classification project cover" loading="lazy" />
+								<div class="tag">Machine Learning</div>
+							</div>
+							<div class="card__body">
+								<h3>Diabetes Prediction Model</h3>
+								<p>A diabetes classification model to predict whether a patient has diabetes based on medical data.</p>
+								<div class="chips" aria-label="Tech stack">
+									<span class="chip">Python</span>
+									<span class="chip">Classification</span>
+									<span class="chip">Full ML Pipeline</span>
+
+									<span class="chip">scikit-learn</span>
+									<span class="chip">Pandas</span>
+								</div>
+								<div class="links" aria-label="Links">
+									<a class="link" href="https://github.com/Yehiahany2005/Diabetes-Prediction-ML-Classification" target="_blank" rel="noreferrer">GitHub</a>
+								</div>
+							</div>
+						</article>
+
+						<article class="card card--project">
+							<div class="card__cover">
+								<img src="photos/Projects/LPR.png" alt="License plate recognition project cover" loading="lazy" />
+								<div class="tag">Image Processing</div>
+							</div>
+							<div class="card__body">
+								<h3>License Plate Recognition (LPR) System</h3>
+								<p>Classic image processing pipeline to detect and recognize European license plates.</p>
+								<div class="chips" aria-label="Tech stack">
+									<span class="chip">Python</span>
+									<span class="chip">OpenCV</span>
+									<span class="chip">Image processing</span>
+								</div>
+								<div class="links" aria-label="Links">
+									<a class="link" href="https://github.com/Yehiahany2005/License-Plate-Recognition-System" target="_blank" rel="noreferrer">GitHub</a>
+								</div>
+							</div>
+						</article>
+					</div>
+				</section>
+
+				<section id="certs" class="section">
+					<header class="section__head">
+						<div class="section__title-group">
+							<h2>Awards & Certificates</h2>
+							<span class="section__line" aria-hidden="true"></span>
+						</div>
+						
+					</header>
+
+					<div class="grid grid--certs">
+						<article class="card card--cert">
+							<div class="cert__img">
+								<img src="photos/OOP%20Certificate.jpg" alt="Certificate of Achievement (OOP Project of the Year)" loading="lazy" />
+							</div>
+							<div class="card__body">
+								<strong>OOP Project of the Year (2025) — Java Video Game</strong>
+								<span class="muted">Winner · Best Object-Oriented Programming Project</span>
+							</div>
+						</article>
+
+						<article class="card card--cert">
+							<div class="cert__img">
+								<img src="photos/PM%20-%20IBM.png" alt="IBM certificate — Project Management Fundamentals" loading="lazy" />
+							</div>
+							<div class="card__body">
+								<strong>IBM — Project Management Fundamentals</strong>
+								<span class="muted">Certificate</span>
+							</div>
+						</article>
+
+						<article class="card card--cert">
+							<div class="cert__img">
+								<img src="photos/Data%20fundamentals%20-%20IBM.png" alt="IBM certificate — Data fundamentals" loading="lazy" />
+							</div>
+							<div class="card__body">
+								<strong>IBM — Data Fundamentals</strong>
+								<span class="muted">Certificate</span>
+							</div>
+						</article>
+					</div>
+				</section>
+
+				<section id="education" class="section">
+					<header class="section__head">
+						<div class="section__title-group">
+							<h2>Education</h2>
+							<span class="section__line" aria-hidden="true"></span>
+						</div>
+						
+					</header>
+
+					<div class="grid grid--two">
+						<div class="card reveal">
+							<div class="card__body">
+								<div class="rowhead">
+									<strong>Misr International University (MIU)</strong>
+									<span>Bachelor degree</span>
+								</div>
+								<p>3rd year Computer Science student with <strong>AI minor</strong>.</p>
+							</div>
+						</div>
+
+						<div class="card reveal">
+							<div class="card__body">
+								<div class="rowhead">
+									<strong>Lycée International Balzac</strong>
+									<span>French Baccalaureate</span>
+								</div>
+								<p>French baccalaureate.</p>
+							</div>
+						</div>
+
+						
+					</div>
+				</section>
+
+				<section id="languages" class="section">
+					<header class="section__head">
+						<div class="section__title-group">
+							<h2>Languages</h2>
+							<span class="section__line" aria-hidden="true"></span>
+						</div>
+					</header>
+
+					<div class="grid grid--languages">
+						<article class="card card--language">
+							<div class="card__body">
+								<div class="lang-card__head">
+									<div class="lang-card__flag-wrap">
+										<img
+											class="lang-card__flag"
+											src="photos/Flag_of_France.svg"
+											alt="French flag"
+											loading="lazy"
+											decoding="async"
+										/>
+									</div>
+									<div class="lang-card__meta">
+										<strong>French</strong>
+										<div class="lang-card__stars" role="img" aria-label="5 out of 5 stars">
+											<span class="star star--on" aria-hidden="true">★</span>
+											<span class="star star--on" aria-hidden="true">★</span>
+											<span class="star star--on" aria-hidden="true">★</span>
+											<span class="star star--on" aria-hidden="true">★</span>
+											<span class="star star--on" aria-hidden="true">★</span>
+										</div>
+									</div>
+								</div>
+								<p>School studies completed in French language at lycée international Balzac</p>
+							</div>
+						</article>
+
+						<article class="card card--language">
+							<div class="card__body">
+								<div class="lang-card__head">
+									<div class="lang-card__flag-wrap">
+										<img
+											class="lang-card__flag"
+											src="photos/Flag_of_England.svg"
+											alt="English flag"
+											loading="lazy"
+											decoding="async"
+										/>
+									</div>
+									<div class="lang-card__meta">
+										<strong>English</strong>
+										<div class="lang-card__stars" role="img" aria-label="5 out of 5 stars">
+											<span class="star star--on" aria-hidden="true">★</span>
+											<span class="star star--on" aria-hidden="true">★</span>
+											<span class="star star--on" aria-hidden="true">★</span>
+											<span class="star star--on" aria-hidden="true">★</span>
+											<span class="star star--on" aria-hidden="true">★</span>
+										</div>
+									</div>
+								</div>
+								<p>Fluent English speaker</p>
+							</div>
+						</article>
+
+						<article class="card card--language">
+							<div class="card__body">
+								<div class="lang-card__head">
+									<div class="lang-card__flag-wrap">
+										<img
+											class="lang-card__flag"
+											src="photos/Flag_of_Egypt.svg"
+											alt="Egyptian flag"
+											loading="lazy"
+											decoding="async"
+										/>
+									</div>
+									<div class="lang-card__meta">
+										<strong>Arabic</strong>
+										<div class="lang-card__stars" role="img" aria-label="5 out of 5 stars">
+											<span class="star star--on" aria-hidden="true">★</span>
+											<span class="star star--on" aria-hidden="true">★</span>
+											<span class="star star--on" aria-hidden="true">★</span>
+											<span class="star star--on" aria-hidden="true">★</span>
+											<span class="star star--on" aria-hidden="true">★</span>
+										</div>
+									</div>
+								</div>
+								<p>Mother language</p>
+							</div>
+						</article>
+					</div>
+				</section>
+
+				<section id="skills" class="section">
+					<header class="section__head">
+						<div class="section__title-group">
+							<h2>Skills</h2>
+							<span class="section__line" aria-hidden="true"></span>
+						</div>
+						
+					</header>
+
+					<div class="grid grid--two">
+						<div class="card reveal">
+							<div class="card__body">
+								<div class="rowhead">
+									<strong>Technical</strong>
+									<span>Skills</span>
+								</div>
+								<div class="chips">
+									<span class="chip">C++</span>
+									<span class="chip">Java</span>
+									<span class="chip">JavaScript</span>
+									<span class="chip">Python</span>
+									<span class="chip">Git</span>
+									<span class="chip">HTML / CSS</span>
+									<span class="chip">Node.js</span>
+									<span class="chip">PHP</span>
+									<span class="chip">SQL</span>
+									<span class="chip">OOP</span>
+									<span class="chip">Web Development</span>
+									<span class="chip">Image Processing</span>
+								</div>
+							</div>
+						</div>
+
+						<div class="card reveal">
+							<div class="card__body">
+								<div class="rowhead">
+									<strong>Non-Technical</strong>
+									<span>Skills</span>
+								</div>
+								<div class="chips">
+									<span class="chip">Problem solving</span>
+									<span class="chip">Strong presentation</span>
+									<span class="chip">Project management</span>
+									<span class="chip">Leadership</span>
+									<span class="chip">Team work</span>
+									<span class="chip">Discipline (sport)</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section id="contact" class="section">
+					<header class="section__head">
+						<div class="section__title-group">
+							<h2>Contact</h2>
+							<span class="section__line" aria-hidden="true"></span>
+						</div>
+						
+					</header>
+
+					<div class="grid grid--two">
+						<div class="card reveal">
+							<div class="card__body">
+								<div class="rowhead">
+									<strong>Reach me</strong>
+									<span>Contact Methods</span>
+								</div>
+								<p>
+									Email: <a class="link" href="mailto:yehia.shorim@gmail.com">yehia.shorim@gmail.com</a><br />
+									Phone: <a class="link" href="tel:+201062920111">+20 106 292 0111</a><br />
+									Location: Cairo, Egypt
+								</p>
+							</div>
+						</div>
+
+						<div class="card reveal">
+							<div class="card__body">
+								<div class="rowhead">
+									<strong>Profiles</strong>
+									<span>Links</span>
+								</div>
+								<p>
+									GitHub:
+									<a class="link" href="https://github.com/Yehiahany2005" target="_blank" rel="noreferrer">github.com/Yehiahany2005</a><br />
+									LinkedIn:
+									<a class="link" href="https://linkedin.com/in/yehiashorim" target="_blank" rel="noreferrer">linkedin.com/in/yehiashorim</a>
+								</p>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<footer class="footer">
+					<div class="footer__inner">
+						<div class="footer__name">Yehia Hany Shorim</div>
+						<div class="footer__role">Junior Computer Science Studenet</div>
+					</div>
+				</footer>
+			</div>
+		</main>
+	</body>
+</html>
