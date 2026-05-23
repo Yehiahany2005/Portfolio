@@ -27,8 +27,18 @@
 	if (!navbar || !floatLockup || !navLockup || !hero) return;
 
 	const mobileMq = window.matchMedia("(max-width: 640px)");
+	let isMobile = mobileMq.matches;
+	
 	const updateViewportClass = () => {
-		root.classList.toggle("is-mobile", mobileMq.matches);
+		isMobile = mobileMq.matches;
+		root.classList.toggle("is-mobile", isMobile);
+		// On mobile, hide floatLockup immediately and show navLockup
+		if (isMobile) {
+			if (floatLockup) floatLockup.style.display = "none";
+			if (navLockup) navLockup.style.opacity = "1";
+		} else {
+			if (floatLockup) floatLockup.style.display = "";
+		}
 	};
 	updateViewportClass();
 	mobileMq.addEventListener?.("change", updateViewportClass);
@@ -246,10 +256,11 @@
 			return;
 		}
 
-		// Respect reduced-motion: keep a premium static layout without scroll animation.
-		if (reduceMotion) {
-			gsap.set(navLockup, { opacity: 1 });
-			gsap.set(floatLockup, { opacity: 0 });
+		// On mobile: skip all GSAP animations, just show navbar logo and hide floatLockup
+		if (isMobileViewport() || reduceMotion) {
+			// Hide floating lockup, show navbar lockup
+			if (floatLockup) floatLockup.style.display = "none";
+			if (navLockup) navLockup.style.opacity = "1";
 			if (heroContent) gsap.set(heroContent, { opacity: 1, y: 0 });
 			gsap.set([".section__head h2", ".section__line", ".card--project", ".card--cert", ".reveal"], {
 				clearProps: "all",
@@ -264,25 +275,21 @@
 
 		function getStartScale() {
 			const w = window.innerWidth;
-			// Mobile: smaller hero lockup so it fits comfortably on narrow screens.
-			if (isMobileViewport()) {
-				return Math.min(1.7, Math.max(1.25, w / 220));
-			}
+			// Desktop: larger hero lockup
 			return Math.min(3.4, Math.max(2.1, w / 340));
 		}
 
 		function getPinScrollDistance() {
-			if (isMobileViewport()) {
-				return Math.round(window.innerHeight * 0.5);
-			}
 			return Math.round(window.innerHeight * 0.65);
 		}
 
 		function getEndScale() {
-			// Keep the end state fully visible on mobile and desktop.
 			return 1;
 		}
 
+		// Make sure floatLockup is visible on desktop
+		if (floatLockup) floatLockup.style.display = "";
+		
 		// Initial visual state
 		gsap.set(navLockup, { opacity: 0 });
 		if (heroContent) gsap.set(heroContent, { opacity: 0, y: 14 });
@@ -329,11 +336,8 @@
 			scrollTrigger: {
 				trigger: hero,
 				start: "top top",
-				// Keep the pinned range tight so you don't scroll through empty space.
 				end: () => `+=${getPinScrollDistance()}`,
-				// Using a long scrub value can feel like "lag" because animation intentionally trails scroll.
-				// Keep it tight but still premium-smooth.
-				scrub: () => (isMobileViewport() ? 0.14 : 0.35),
+				scrub: 0.35,
 				pin: true,
 				anticipatePin: 1,
 				invalidateOnRefresh: true,
@@ -341,7 +345,7 @@
 			},
 		});
 
-		// 1) (Optional) Reveal hero content as scrolling begins
+		// 1) Reveal hero content as scrolling begins
 		if (heroContent) {
 			tl.to(
 				heroContent,
@@ -372,8 +376,6 @@
 		);
 
 		// 4-5) Seamless handoff into the real navbar lockup
-		// Crossfade a bit earlier so the floating lockup doesn't sit on top of nav links
-		// when users stop scrolling near the end of the pinned range.
 		tl.to(
 			floatLockup,
 			{
@@ -392,8 +394,6 @@
 			},
 			0.85
 		);
-
-		// Keep background static so the page feels like one continuous gradient.
 
 		initPremiumMotion();
 

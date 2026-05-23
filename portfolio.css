@@ -566,9 +566,8 @@ main {
 	}
 }
 
+/* REPLACE WITH THIS: */
 .hero--pin {
-	/* Keep the pinned trigger smaller than the viewport so the next section can
-	   begin appearing while the scroll animation is still running. */
 	min-height: clamp(180px, 42vh, 420px);
 	height: auto;
 	padding: 0;
@@ -576,7 +575,8 @@ main {
 
 @media (max-width: 640px) {
 	.hero--pin {
-		min-height: clamp(150px, 36vh, 280px);
+		min-height: 0;
+		display: none;
 	}
 }
 
